@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Área</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Calculadora de Área de Figuras Geométricas</h1>
+        
+        <div class="info-container">
+            <div class="info-box">
+                <h2>Triângulo</h2>
+                <p>O triângulo é uma figura geométrica com três lados. A área é calculada pela fórmula:</p>
+                <p><strong>Área = (base × altura) / 2</strong></p>
+            </div>
+            <div class="info-box">
+                <h2>Quadrado</h2>
+                <p>O quadrado é uma figura geométrica com quatro lados iguais. A área é calculada pela fórmula:</p>
+                <p><strong>Área = lado × lado</strong></p>
+            </div>
+            <div class="info-box">
+                <h2>Retângulo</h2>
+                <p>O retângulo é uma figura geométrica com quatro lados, onde os lados opostos são iguais. A área é calculada pela fórmula:</p>
+                <p><strong>Área = largura × altura</strong></p>
+            </div>
+        </div>
+
+        <button id="open-popup" onclick="openPopup()">Abrir Calculadora</button>
+    </div>
+
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h1>Calculadora de Área</h1>
+            <label for="figura">Escolha uma figura:</label>
+            <select id="figura-popup" onchange="mostrarCamposPopup()">
+                <option value="">Selecione</option>
+                <option value="triangulo">Triângulo</option>
+                <option value="quadrado">Quadrado</option>
+                <option value="retangulo">Retângulo</option>
+            </select>
+
+            <div id="campos-popup" style="display: none;">
+                <div id="triangulo-popup" class="campo">
+                    <label for="base-popup">Base:</label>
+                    <input type="number" id="base-popup" placeholder="Base do triângulo">
+                    <label for="altura-popup">Altura:</label>
+                    <input type="number" id="altura-popup" placeholder="Altura do triângulo">
+                </div>
+                <div id="quadrado-popup" class="campo">
+                    <label for="lado-popup">Lado:</label>
+                    <input type="number" id="lado-popup" placeholder="Lado do quadrado">
+                </div>
+                <div id="retangulo-popup" class="campo">
+                    <label for="largura-popup">Largura:</label>
+                    <input type="number" id="largura-popup" placeholder="Largura do retângulo">
+                    <label for="alturaRet-popup">Altura:</label>
+                    <input type="number" id="alturaRet-popup" placeholder="Altura do retângulo">
+                </div>
+            </div>
+
+            <button onclick="calcularAreaPopup()">Calcular Área</button>
+            <h2 id="resultado-popup"></h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
